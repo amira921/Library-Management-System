@@ -1,0 +1,102 @@
+CREATE TABLE `book` (
+  `id` int(5) NOT NULL,
+  `Edition` int(2) NOT NULL,
+  `Copies` int(50) NOT NULL,
+  `Used` int(50) NOT NULL,
+  `Cost` float NOT NULL,
+  `Title` varchar(50) NOT NULL,
+  `Publisher` varchar(50) NOT NULL,
+  `Author` varchar(50) NOT NULL
+) ;
+
+INSERT INTO `book` (`id`, `Edition`, `Copies`, `Used`, `Cost`, `Title`, `Publisher`, `Author`) VALUES
+(1, 10, 50, 20, 80, 'Harry Potter and the Philosopher\'s Stone', 'Bloomsbury', 'J. K. Rowling  ');
+
+
+CREATE TABLE `borrower` (
+  `id` int(5) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Phone` int(11) NOT NULL,
+  `Age` int(11) NOT NULL,
+  `Address` varchar(50) NOT NULL,
+  `SSN` bigint(20) NOT NULL
+);
+
+INSERT INTO `borrower` (`id`, `Name`, `Email`, `Phone`, `Age`, `Address`, `SSN`) VALUES
+(1, 'Ali omar Ali', 'ali2045@gmail.com', 1122266787, 20, 'Cairo', 30104024567890);
+
+CREATE TABLE `borrowing` (
+  `process_id` int(11) NOT NULL,
+  `book_id` int(11) DEFAULT NULL,
+  `borrower_id` int(11) DEFAULT NULL,
+  `recieved_date` date NOT NULL,
+  `due_date` date NOT NULL,
+  `return_date` date NOT NULL
+  );
+
+INSERT INTO `borrowing` (`process_id`, `book_id`, `borrower_id`, `recieved_date`, `due_date`, `return_date`) VALUES
+(2, 1, 1, '2022-02-03', '2022-03-03', '2022-05-23');
+
+
+CREATE TABLE `liberarian` (
+  `id` int(3) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `ssn` bigint(20) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `address` varchar(50) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `age` int(2) NOT NULL
+) ;
+
+INSERT INTO `liberarian` (`id`, `name`, `ssn`, `phone`, `address`, `username`, `password`, `email`, `age`) VALUES
+(1, 'amira', 30104019300000, 1123465787, 'cairo', 'amira', 'amira', 'amira@gmail.com', 20),
+(2, 'mona\nmona', 301020119000, 112342311, 'cairo', 'mona', 'mona', 'mona@gmail.com', 22);
+
+--
+-- Indexes for dumped tables
+--
+
+ALTER TABLE `book`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `borrower`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `borrowing`
+  ADD PRIMARY KEY (`process_id`),
+  ADD KEY `book_id` (`book_id`),
+  ADD KEY `borrower_id` (`borrower_id`);
+
+ALTER TABLE `liberarian`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+ALTER TABLE `book`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+
+ALTER TABLE `borrower`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+ALTER TABLE `borrowing`
+  MODIFY `process_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+ALTER TABLE `liberarian`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+ALTER TABLE `borrowing`
+  ADD CONSTRAINT `borrowing_ibfk_1` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`),
+  ADD CONSTRAINT `borrowing_ibfk_2` FOREIGN KEY (`borrower_id`) REFERENCES `borrower` (`id`);
+
+
+
