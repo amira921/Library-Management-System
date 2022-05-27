@@ -27,9 +27,9 @@ This project is for library workflow management and has two views:
 - Administrator login to the system with his username and password.
 - Administrator can add, update, delete, and search for librarians
 </br>
-<p align="left"> <img src="screenshot\admin.png" alt="angular" width="300" height="500"/><img src="screenshot\admin2.png" alt="angular" width="300" height="500"/>
+<p align="left"> <img src="https://github.com/amira921/Library-Management-System/blob/main/screenshot/admin.PNG" alt="" width="550" height="950"/><img src="https://github.com/amira921/Library-Management-System/blob/main/screenshot/admin2.PNG" alt="" width="550" height="950"/>
 
-<p align="left"> <img src="screenshot\admin3.png" alt="angular" width="300" height="500"/><img src="screenshot\admin4.png" alt="angular" width="300" height="500"/>
+<p align="left"> <img src="https://github.com/amira921/Library-Management-System/blob/main/screenshot/admin3.PNG" alt="" width="550" height="950"/><img src="https://github.com/amira921/Library-Management-System/blob/main/screenshot/admin4.PNG" alt="angular" width="550" height="950"/>
 
 
 **<h2> Librarian View </h3>** 
@@ -39,5 +39,5 @@ This project is for library workflow management and has two views:
    - Book
    - Borrowing Process
 </br>
-<p align="left"> <img src="screenshot\liberary.png" alt="angular" width="300" height="500"/><img src="screenshot\liberary1.png" alt="angular" width="300" height="500"/><img src="screenshot\liberary2.png" alt="angular" width="300" height="500"/>
+<p align="left"> <img src="https://github.com/amira921/Library-Management-System/blob/main/screenshot/liberary.PNG" alt="" width="550" height="950"/><img src="https://github.com/amira921/Library-Management-System/blob/main/screenshot/liberary1.PNG" alt="angular" width="550" height="950"/><img src="https://github.com/amira921/Library-Management-System/blob/main/screenshot/liberary2.PNG" alt="angular" width="550" height="950"/>
 
